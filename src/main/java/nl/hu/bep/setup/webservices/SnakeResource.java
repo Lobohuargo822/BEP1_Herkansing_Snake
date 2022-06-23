@@ -1,6 +1,7 @@
 package nl.hu.bep.setup.webservices;
 
 import nl.hu.bep.setup.model.GameInfo;
+import nl.hu.bep.setup.webservices.requests.GameRequest;
 import nl.hu.bep.setup.webservices.responses.MoveResponse;
 
 import javax.ws.rs.*;
@@ -12,24 +13,15 @@ public class SnakeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getGameInfor(){
-
+    public Response getGameInfo() {
         GameInfo info = new GameInfo();
-        info.setColor("white");
         return Response.ok(info).build();
     }
 
     @POST
     @Path("/start")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response startGame(/* GameRequest request*/){
-        return Response.ok().build();
-    }
-
-    @POST
-    @Path("/stop")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response stopGame(){
+    public Response startGame() {
         return Response.ok().build();
     }
 
@@ -37,8 +29,19 @@ public class SnakeResource {
     @Path("/move")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response moveSnake(){
-        MoveResponse response = new MoveResponse("up", "Move up!");
+    public Response moveSnake(GameRequest request) {
+
+        System.out.println(request.getTurn());
+        System.out.println(request.getYou().get("health"));
+
+        MoveResponse response = new MoveResponse("south", "Going up!!!!");
         return Response.ok(response).build();
+    }
+
+    @POST
+    @Path("/stop")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response stopGame(){
+        return Response.ok().build();
     }
 }

@@ -8,4 +8,12 @@ public class MoveResponse {
         this.move = move;
         this.shout = shout;
     }
+
+    public String getMove() {
+        return move;
+    }
+
+    public String getShout() {
+        return shout;
+    }
 }

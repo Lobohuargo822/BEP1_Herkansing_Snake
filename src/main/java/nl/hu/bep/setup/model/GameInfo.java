@@ -3,8 +3,8 @@ package nl.hu.bep.setup.model;
 public class GameInfo {
     //zet hier de snake info vanuit de API-site
         private String apiversion = "1";
-        private String author = "Jeroen";
-        private String color = "Yellow";
+        private String author = "JB_daBest";
+        private String color = "#888888";
         private String head = "default";
         private String tail = "default";
         private String version = "0.0.1-beta";
