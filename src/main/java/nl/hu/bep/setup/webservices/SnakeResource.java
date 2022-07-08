@@ -29,7 +29,7 @@ public class SnakeResource {
 
     @POST
     @Path("/move")
-//    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response moveSnake(GameRequest request) {
         MoveResponse move = new MoveResponse();
@@ -38,15 +38,17 @@ public class SnakeResource {
         System.out.println(request.getTurn());
         System.out.println(request.getYou().get("health"));
 
-        you.avoidMyNeck(you.getHead(), you.getBody(), move.getPossibleMoves() );
-        you.avoidBorder(you.getHead(), move.getPossibleMoves(), request.getBoard());
-        you.avoidBody(you.getHead(), you.getBody(), move.getPossibleMoves() );
-        int choice = new Random().nextInt(move.getPossibleMoves().size());
+//        you.avoidMyNeck(you.getHead(), you.getBody(), move.getPossibleMoves() );
+//        you.avoidBorder(you.getHead(), move.getPossibleMoves(), request.getBoard());
+//        you.avoidBody(you.getHead(), you.getBody(), move.getPossibleMoves() );
+//        int choice = new Random().nextInt(move.getPossibleMoves().size());
+//
+//        String Move = move.getPossibleMoves().get(choice);
+//        System.out.println(Move);
 
-        String Move = move.getPossibleMoves().get(choice);
-        System.out.println(Move);
-
-        move.setMove(Move);
+        System.out.println("Testing");
+//
+//        move.setMove(Move);
 
         return Response.ok(move).build();
     }
