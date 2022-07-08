@@ -32,26 +32,27 @@ public class SnakeResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response moveSnake(GameRequest request) {
+
         MoveResponse move = new MoveResponse();
         You you = (You) new GameRequest().getYou();
 
         System.out.println(request.getTurn());
         System.out.println(request.getYou().get("health"));
 
-//        you.avoidMyNeck(you.getHead(), you.getBody(), move.getPossibleMoves() );
-//        you.avoidBorder(you.getHead(), move.getPossibleMoves(), request.getBoard());
-//        you.avoidBody(you.getHead(), you.getBody(), move.getPossibleMoves() );
-//        int choice = new Random().nextInt(move.getPossibleMoves().size());
-//
-//        String Move = move.getPossibleMoves().get(choice);
-//        System.out.println(Move);
+        you.avoidMyNeck(you.getHead(), you.getBody(), move.getPossibleMoves() );
+        you.avoidBorder(you.getHead(), move.getPossibleMoves(), request.getBoard());
+        you.avoidBody(you.getHead(), you.getBody(), move.getPossibleMoves() );
+        int choice = new Random().nextInt(move.getPossibleMoves().size());
+
+        String Move = move.getPossibleMoves().get(choice);
+        System.out.println(Move);
 
         System.out.println("Testing");
-//
-//        move.setMove(Move);
 
+        move.setMove(Move);
         return Response.ok(move).build();
     }
+//
 
     @POST
     @Path("/stop")
