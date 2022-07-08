@@ -11,11 +11,30 @@ public class GameRequest {
     private Game game;
     private Board board;
 
+    public GameRequest() {
+    }
+
     public int getTurn() {
         return turn;
     }
 
     public Map<String, Object> getYou() {
         return you;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
     }
 }
