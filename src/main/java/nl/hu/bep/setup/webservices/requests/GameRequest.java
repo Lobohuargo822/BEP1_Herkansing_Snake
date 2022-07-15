@@ -6,10 +6,11 @@ import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GameRequest {
-    private int turn;
-    private Map<String, Object> you;
+//    private Map<String, Object> you;
     private Game game;
+    private int turn;
     private Board board;
+    private You you;
 
     public GameRequest() {
     }
@@ -18,7 +19,12 @@ public class GameRequest {
         return turn;
     }
 
-    public Map<String, Object> getYou() {
+//    public Map<String, Object> getYou() {
+//        return you;
+//    }
+
+
+    public You getYou() {
         return you;
     }
 

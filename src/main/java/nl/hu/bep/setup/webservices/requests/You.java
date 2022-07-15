@@ -17,7 +17,8 @@ public class You {
     public String squad;
     public Customization customizations;
 
-    public You(String id, String name, String latency, int health, ArrayList<Body> body, Head head, int length, String shout, String squad, Customization customizations) {
+    public You(String id, String name, String latency, int health, ArrayList<Body> body, Head head, int length,
+               String shout, String squad, Customization customizations) {
         this.id = id;
         this.name = name;
         this.latency = latency;
@@ -84,6 +85,7 @@ public class You {
     }
 
     public void avoidBorder(Head head, ArrayList<String> possibleMoves, Board board){
+//    public void avoidBorder(Head head, ArrayList<String> possibleMoves){
         if (head.getY() == 10){
             possibleMoves.remove("up");
             possibleMoves.remove("left");
