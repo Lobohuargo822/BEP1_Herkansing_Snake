@@ -13,6 +13,8 @@ public class Game {
         this.source = source;
     }
 
+    public Game(){}
+
     public String getId() {
         return id;
     }

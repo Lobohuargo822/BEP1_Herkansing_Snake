@@ -9,6 +9,8 @@ public class Body {
         this.y = y;
     }
 
+    public Body(){}
+
     public int getX() {
         return x;
     }

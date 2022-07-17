@@ -9,6 +9,8 @@ public class Head {
         this.y = y;
     }
 
+    public Head(){}
+
     public int getX() {
         return x;
     }

@@ -9,6 +9,8 @@ public class Snake {
         this.body = body;
     }
 
+    public Snake(){}
+
     public Head getHead() {
         return head;
     }

@@ -11,6 +11,8 @@ public class Ruleset {
         this.settings = settings;
     }
 
+    public Ruleset(){}
+
     public String getName() {
         return name;
     }
@@ -21,5 +23,17 @@ public class Ruleset {
 
     public Settings getSettings() {
         return settings;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
     }
 }

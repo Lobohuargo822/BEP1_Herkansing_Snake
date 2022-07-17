@@ -15,17 +15,11 @@ public class GameRequest {
     public GameRequest() {
     }
 
-    public int getTurn() {
-        return turn;
-    }
-
-//    public Map<String, Object> getYou() {
-//        return you;
-//    }
-
-
-    public You getYou() {
-        return you;
+    public GameRequest(Game game, int turn, Board board, You you) {
+        this.game = game;
+        this.turn = turn;
+        this.board = board;
+        this.you = you;
     }
 
     public Game getGame() {
@@ -36,11 +30,27 @@ public class GameRequest {
         this.game = game;
     }
 
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
     public Board getBoard() {
         return board;
     }
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public You getYou() {
+        return you;
+    }
+
+    public void setYou(You you) {
+        this.you = you;
     }
 }

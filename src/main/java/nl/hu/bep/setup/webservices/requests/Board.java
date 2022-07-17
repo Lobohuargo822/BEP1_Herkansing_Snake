@@ -17,6 +17,8 @@ public class Board {
         this.hazards = hazards;
     }
 
+    public Board(){}
+
     public int getHeight() {
         return height;
     }

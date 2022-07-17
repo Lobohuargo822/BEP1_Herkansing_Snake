@@ -1,5 +1,8 @@
 package nl.hu.bep.setup.webservices.requests;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Squad {
     public boolean allowBodyCollision;
     public boolean sharedElimination;
@@ -12,6 +15,8 @@ public class Squad {
         this.sharedHealth = sharedHealth;
         this.sharedLength = sharedLength;
     }
+
+    public Squad(){}
 
     public boolean isAllowBodyCollision() {
         return allowBodyCollision;

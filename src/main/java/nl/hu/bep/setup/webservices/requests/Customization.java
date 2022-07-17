@@ -1,5 +1,8 @@
 package nl.hu.bep.setup.webservices.requests;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Customization {
     public String color;
     public String head;
@@ -10,6 +13,8 @@ public class Customization {
         this.head = head;
         this.tail = tail;
     }
+
+    public Customization(){}
 
     public String getColor() {
         return color;

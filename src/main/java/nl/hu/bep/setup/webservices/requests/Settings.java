@@ -19,6 +19,9 @@ public class Settings {
         this.squad = squad;
     }
 
+    public Settings() {
+    }
+
     public int getFoodSpawnChance() {
         return foodSpawnChance;
     }

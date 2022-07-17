@@ -31,6 +31,8 @@ public class You {
         this.customizations = customizations;
     }
 
+    public You(){}
+
     public String getId() {
         return id;
     }

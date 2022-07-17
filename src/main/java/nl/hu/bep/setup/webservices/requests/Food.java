@@ -9,6 +9,8 @@ public class Food {
         this.y = y;
     }
 
+    public Food(){}
+
     public int getX() {
         return x;
     }

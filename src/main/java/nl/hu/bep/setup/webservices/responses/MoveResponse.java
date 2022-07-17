@@ -7,15 +7,15 @@ import java.util.Vector;
 public class MoveResponse {
     private String move;
     private String shout;
-//    public ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
-//    public ArrayList<String> possibleshouts = new ArrayList<>(Arrays.asList("north", "south", "west", "east"));
+    public ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
+    public ArrayList<String> possibleshouts = new ArrayList<>(Arrays.asList("move up", "move down", "move left", "move right"));
 
     public MoveResponse(String move, String shout) {
         this.move = move;
         this.shout = shout;
     }
 
-//    public MoveResponse(){}
+    public MoveResponse(){}
 
     public String getMove() {
         return move;
@@ -31,11 +31,11 @@ public class MoveResponse {
 
 
 
-//    public ArrayList<String> getPossibleMoves() {
-//        return possibleMoves;
-//    }
-//
-//    public ArrayList<String> getPossibleshouts() {
-//        return possibleshouts;
-//    }
+    public ArrayList<String> getPossibleMoves() {
+        return possibleMoves;
+    }
+
+    public ArrayList<String> getPossibleshouts() {
+        return possibleshouts;
+    }
 }
