@@ -29,7 +29,9 @@ public class MoveResponse {
         return shout;
     }
 
-
+    public void setShout(String shout) {
+        this.shout = shout;
+    }
 
     public ArrayList<String> getPossibleMoves() {
         return possibleMoves;
