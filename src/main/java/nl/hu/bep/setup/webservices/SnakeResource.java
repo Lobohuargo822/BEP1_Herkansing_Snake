@@ -5,6 +5,8 @@ import nl.hu.bep.setup.webservices.requests.GameRequest;
 import nl.hu.bep.setup.webservices.requests.You;
 import nl.hu.bep.setup.webservices.responses.MoveResponse;
 
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -32,8 +34,8 @@ public class SnakeResource {
 
     @POST
     @Path("/move")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes("application/json")
+    @Produces("application/json")
     public Response moveSnake(GameRequest request) {
 
         MoveResponse move = new MoveResponse();
@@ -48,12 +50,12 @@ public class SnakeResource {
         int choice = new Random().nextInt(move.getPossibleMoves().size());
 
         String Move = move.getPossibleMoves().get(choice);
-        String Shout = move.getPossibleshouts().get(choice + 1);
+//        String Shout = move.getPossibleshouts().get(choice + 1);
 
 //        System.out.println(Move);
 
         move.setMove(Move);
-        move.setShout(Shout);
+//        move.setShout(Shout);
         return Response.ok(move).build();
     }
 
@@ -65,6 +67,7 @@ public class SnakeResource {
 //        MoveResponse response = new MoveResponse("right", "go right");
 //        return Response.ok(response).build();
 //    }
+
 
 
     @POST
