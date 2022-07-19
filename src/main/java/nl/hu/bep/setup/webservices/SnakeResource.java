@@ -48,12 +48,12 @@ public class SnakeResource {
         int choice = new Random().nextInt(move.getPossibleMoves().size());
 
         String Move = move.getPossibleMoves().get(choice);
-//        String Shout = move.getPossibleshouts().get(choice + 1);
+        String Shout = move.getPossibleshouts().get(choice + 1);
 
 //        System.out.println(Move);
 
         move.setMove(Move);
-//        move.setShout(Shout);
+        move.setShout(Shout);
         return Response.ok(move).build();
     }
 
