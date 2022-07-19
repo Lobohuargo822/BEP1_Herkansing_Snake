@@ -88,10 +88,10 @@ public class You {
 
     public void avoidBorder(Head head, ArrayList<String> possibleMoves, Board board){
 //    public void avoidBorder(Head head, ArrayList<String> possibleMoves){
-        if (head.getY() == 10){
+        if (head.getY() == board.getHeight()-1){
             possibleMoves.remove("up");
             possibleMoves.remove("left");
-        } else if (head.getX() == 10) {
+        } else if (head.getX() == board.getWidth()-1) {
             possibleMoves.remove("right");
             possibleMoves.remove("down");
         } else if (head.getY() == 0){
@@ -100,7 +100,7 @@ public class You {
         } else if (head.getX() == 0){
             possibleMoves.remove("left");
             possibleMoves.remove("down");
-        } else if (head.getY() == 10 && head.getX() == 10){
+        } else if (head.getY() == board.getHeight()-1 && head.getX() == board.getWidth()-1){
             possibleMoves.remove("up");
             possibleMoves.remove("right");
         } else if (head.getY() == 0 && head.getX() == 0){
