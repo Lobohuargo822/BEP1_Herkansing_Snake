@@ -6,16 +6,16 @@ import java.util.Vector;
 
 public class MoveResponse {
     private String move;
-    private String shout;
-    public ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
-    public ArrayList<String> possibleshouts = new ArrayList<>(Arrays.asList("move up", "move down", "move left", "move right"));
+//    private String shout;
+//    private final ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
+//    private final ArrayList<String> possibleshouts = new ArrayList<>(Arrays.asList("move up", "move down", "move left", "move right"));
 
-    public MoveResponse(String move, String shout) {
+    public MoveResponse(String move) {
         this.move = move;
-        this.shout = shout;
+//        this.shout = shout;
     }
 
-    public MoveResponse(){}
+//    public MoveResponse(){}
 
     public String getMove() {
         return move;
@@ -25,19 +25,19 @@ public class MoveResponse {
         this.move = move;
     }
 
-    public String getShout() {
-        return shout;
-    }
+//    public String getShout() {
+//        return shout;
+//    }
+//
+//    public void setShout(String shout) {
+//        this.shout = shout;
+//    }
 
-    public void setShout(String shout) {
-        this.shout = shout;
-    }
+//    public ArrayList<String> getPossibleMoves() {
+//        return possibleMoves;
+//    }
 
-    public ArrayList<String> getPossibleMoves() {
-        return possibleMoves;
-    }
-
-    public ArrayList<String> getPossibleshouts() {
-        return possibleshouts;
-    }
+//    public ArrayList<String> getPossibleshouts() {
+//        return possibleshouts;
+//    }
 }

@@ -1,5 +1,8 @@
 package nl.hu.bep.setup.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 public class GameInfo {
     //zet hier de snake info vanuit de API-site
         private String apiversion = "1";

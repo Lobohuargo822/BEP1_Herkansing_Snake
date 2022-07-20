@@ -38,24 +38,21 @@ public class SnakeResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response moveSnake(GameRequest request) {
 
-        MoveResponse move = new MoveResponse();
+        ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
+
         You you = request.getYou();
 
-//        System.out.println(request.getTurn());
-//        System.out.println(request.getYou().get("health"));
+        you.avoidMyNeck(you.getHead(), you.getBody(), possibleMoves );
+        you.avoidBorder(you.getHead(), possibleMoves, request.getBoard());
+        you.avoidBody(you.getHead(), you.getBody(), possibleMoves );
+        int choice = new Random().nextInt(possibleMoves.size());
 
-        you.avoidMyNeck(you.getHead(), you.getBody(), move.getPossibleMoves() );
-        you.avoidBorder(you.getHead(), move.getPossibleMoves(), request.getBoard());
-        you.avoidBody(you.getHead(), you.getBody(), move.getPossibleMoves() );
-        int choice = new Random().nextInt(move.getPossibleMoves().size());
+        String Move = possibleMoves.get(choice);
+        MoveResponse move = new MoveResponse(Move);
 
-        String Move = move.getPossibleMoves().get(choice);
-//        String Shout = move.getPossibleshouts().get(choice + 1);
+//        move.setMove(Move);
+        System.out.println(move);
 
-//        System.out.println(Move);
-
-        move.setMove(Move);
-//        move.setShout(Shout);
         return Response.ok(move).build();
     }
 
