@@ -60,7 +60,7 @@ public class SnakeResource {
     @Path("/move")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces(MediaType.APPLICATION_JSON)
-    public Response moveSnake(){
+    public Response moveSnake(GameRequest request){
         MoveResponse response = new MoveResponse("left");
         return Response.ok(response).build();
     }
