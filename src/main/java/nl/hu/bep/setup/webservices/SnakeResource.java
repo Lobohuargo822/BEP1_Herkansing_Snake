@@ -34,8 +34,8 @@ public class SnakeResource {
 
     @POST
     @Path("/move")
-    @Consumes("application/json")
-    @Produces("application/json")
+//    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response moveSnake(GameRequest request) {
 
         MoveResponse move = new MoveResponse();
@@ -71,7 +71,7 @@ public class SnakeResource {
 
 
     @POST
-    @Path("/stop")
+    @Path("/end")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response stopGame(){
         return Response.ok().build();

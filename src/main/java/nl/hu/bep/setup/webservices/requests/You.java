@@ -1,10 +1,13 @@
 package nl.hu.bep.setup.webservices.requests;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
 // het snake body
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class You {
     public String id;
     public String name;
