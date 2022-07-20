@@ -32,38 +32,38 @@ public class SnakeResource {
         return Response.ok().build();
     }
 
-    @POST
-    @Path("/move")
-//    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response moveSnake(GameRequest request) {
-        System.out.println(request);
-
-//        ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
-//
-//        You you = request.getYou();
-//
-//        you.avoidMyNeck(you.getHead(), you.getBody(), possibleMoves );
-//        you.avoidBorder(you.getHead(), possibleMoves, request.getBoard());
-//        you.avoidBody(you.getHead(), you.getBody(), possibleMoves );
-//        int choice = new Random().nextInt(possibleMoves.size());
-//
-//        String Move = possibleMoves.get(choice);
-        MoveResponse move = new MoveResponse("down");
-
-//        move.setMove(Move
-
-        return Response.ok(move).build();
-    }
-
 //    @POST
 //    @Path("/move")
-//    @Consumes({MediaType.APPLICATION_JSON})
+////    @Consumes(MediaType.APPLICATION_JSON)
 //    @Produces(MediaType.APPLICATION_JSON)
-//    public Response moveSnake(){
-//        MoveResponse response = new MoveResponse("right", "go right");
-//        return Response.ok(response).build();
+//    public Response moveSnake(GameRequest request) {
+//        System.out.println(request);
+//
+////        ArrayList<String> possibleMoves = new ArrayList<>(Arrays.asList("up", "down", "left", "right"));
+////
+////        You you = request.getYou();
+////
+////        you.avoidMyNeck(you.getHead(), you.getBody(), possibleMoves );
+////        you.avoidBorder(you.getHead(), possibleMoves, request.getBoard());
+////        you.avoidBody(you.getHead(), you.getBody(), possibleMoves );
+////        int choice = new Random().nextInt(possibleMoves.size());
+////
+////        String Move = possibleMoves.get(choice);
+//        MoveResponse move = new MoveResponse("down");
+//
+////        move.setMove(Move
+//
+//        return Response.ok(move).build();
 //    }
+
+    @POST
+    @Path("/move")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response moveSnake(){
+        MoveResponse response = new MoveResponse("left");
+        return Response.ok(response).build();
+    }
 
 
 
